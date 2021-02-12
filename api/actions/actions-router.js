@@ -20,7 +20,7 @@ router.get("/:id", mw.validateActionId, (req, res) => {
     .then((action) => {
       res.status(200).json(action);
     })
-    .catch(() => res.status(404).json({ message: `The action was not found` }));
+    .catch(() => res.status(500).json({ message: `The action was not found` }));
 });
 
 router.post("/", (req, res) => {
